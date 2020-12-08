@@ -108,11 +108,12 @@ height: auto;
 // });
     
         
-            html2canvas(document.getElementById("txt1")).then(function(canvas) {
+        html2canvas(document.getElementById("txt1")).then(function(canvas) {
             if (navigator.msSaveBlob) {
                 var blob = canvas.msToBlob();
                 return navigator.msSaveBlob(blob, '파일명.jpg');
             } else {
+
                 var el = document.getElementById("target");
                 var txt = document.getElementById("txt1");
                 console.log(txt.value);
@@ -120,14 +121,18 @@ height: auto;
                 el.download = txt.value + '.jpg';
                 el.click();
                 show();
+                
+                
+
+                
             }
         });
         
         
-
-
         
     });
+
+    
 
     function show() {  
              
